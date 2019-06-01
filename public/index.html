@@ -13,7 +13,7 @@
     <link rel="icon" href="/img/favicon.png">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/styles.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
@@ -41,8 +41,8 @@
     <script id="message-template" type="text/html">
         <div class="message">
             <p>
-                <span class="message_name">UserName</span>
-                <span class="message_meta">{{createdAt}}</span>
+                <span class="message__name">UserName</span>
+                <span class="message__meta">{{createdAt}}</span>
             </p>
             <p>{{text}}</p>
         </div>
@@ -51,8 +51,8 @@
     <script id="location-message-template" type="text/html">
         <div class="message">
                 <p>
-                    <span class="message_name">UserName</span>
-                    <span class="message_meta">{{createdAt}}</span>
+                    <span class="message__name">UserName</span>
+                    <span class="message__meta">{{createdAt}}</span>
                 </p>
                 <p><a href={{location}} target="_blank">My location</a></p>
             </div>
