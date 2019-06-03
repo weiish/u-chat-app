@@ -11,8 +11,6 @@ const server = http.createServer(app)
 const io = socketio(server)
 
 app.use(express.static(publicPath))
-//EDIT TEST WHY CONTRIBUTIONS AREN'T SHOWING
-//EDIT TEST WITHOUT SOURCETREE VIA TERMINAL
 io.on('connection', (socket) => {
 
     socket.on('join', ({username, room}) => {
