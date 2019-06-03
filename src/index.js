@@ -12,14 +12,16 @@ const io = socketio(server)
 
 app.use(express.static(publicPath))
 
-
 io.on('connection', (socket) => {
-    console.log('New socketio connection')
-    socket.emit('message', generateMessage('Welcome to the socket connection'))
-    socket.broadcast.emit('message', generateMessage('A new user has joined!'))
+
+    socket.on('join', ({username, room}) => {
+        socket.join(room)
+        socket.emit('message', generateMessage(`Welcome to ${room}`))
+        socket.broadcast.to(room).emit('message', generateMessage(`${username} has joined.`))
+    })
 
     socket.on('sendMessage', (message, callback) => {
-        io.emit('message', generateMessage(message))
+        io.to('A').emit('message', generateMessage(message))
         callback()
     })
 

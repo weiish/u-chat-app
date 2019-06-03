@@ -11,6 +11,9 @@ const $messages = document.querySelector("#messages")
 const messageTemplate = document.querySelector("#message-template").innerHTML
 const locationTemplate = document.querySelector("#location-message-template").innerHTML
 
+//Options
+const {username, room} = Qs.parse(location.search, {ignoreQueryPrefix: true})
+
 client.on('countUpdated', (count) => {
     console.log('Count: ', count)
 })
@@ -60,3 +63,5 @@ $sendLocationButton.addEventListener('click', () => {
         })
     })
 })
+
+client.emit('join', {username, room})
