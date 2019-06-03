@@ -11,6 +11,7 @@ const server = http.createServer(app)
 const io = socketio(server)
 
 app.use(express.static(publicPath))
+//EDIT TEST WHY CONTRIBUTIONS AREN'T SHOWING
 
 io.on('connection', (socket) => {
 
